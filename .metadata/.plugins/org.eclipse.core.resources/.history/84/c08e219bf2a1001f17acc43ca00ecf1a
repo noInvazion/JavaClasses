@@ -1,0 +1,165 @@
+package JavaClass;
+
+import java.util.Scanner;
+
+public class DataCompilation {
+
+    // Private fields
+    private int age, id, salary;
+    private String firstName, lastName, course, dep, desig;
+
+    // Scanner object for input
+    Scanner sc = new Scanner(System.in);
+
+    // Menu method to choose between Student or Employee
+    void menu() {
+        System.out.println("Take Student as Option 1 and Employee as Option 2.");
+        System.out.println("Are you inserting as a Student or Employee (Pick 1 or 2) >> ");
+        int option = sc.nextInt();
+
+        if (option == 1) {
+            new StudentCompilation();
+        } else if (option == 2) {
+            new EmployeeCompilation();
+        } else {
+            System.out.println("Invalid option. Please choose 1 or 2.");
+        }
+    }
+
+    // Setters and Getters for all fields
+
+    // Setter and getter for First Name
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+
+    // Setter and getter for Last Name
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+
+    // Setter and getter for Age
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getAge() {
+        return age;
+    }
+
+    // Setter and getter for ID
+    public void setID(int id) {
+        this.id = id;
+    }
+    public int getID() {
+        return id;
+    }
+
+    // Setter and getter for Course (for Student)
+    public void setCourse(String course) {
+        this.course = course;
+    }
+    public String getCourse() {
+        return course;
+    }
+
+    // Setter and getter for Salary (for Employee)
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+    public int getSalary() {
+        return salary;
+    }
+
+    // Setter and getter for Department (for Employee)
+    public void setDep(String dep) {
+        this.dep = dep;
+    }
+    public String getDep() {
+        return dep;
+    }
+
+    // Setter and getter for Designation (for Employee)
+    public void setDesig(String desig) {
+        this.desig = desig;
+    }
+    public String getDesig() {
+        return desig;
+    }
+
+    // Common method to get common details (Name, Age, ID)
+    public void setCommonDetails() {
+        System.out.println("Enter your first name>> ");
+        setFirstName(sc.next());
+        System.out.println("Enter your last name>> ");
+        setLastName(sc.next());
+        System.out.println("Enter your age>> ");
+        setAge(sc.nextInt());
+        System.out.println("Enter your ID>> ");
+        setID(sc.nextInt());
+    }
+
+    // Method to get details specific to student
+    public void setStudentDetails() {
+        System.out.println("Enter your course>> ");
+        setCourse(sc.next());
+    }
+
+    // Method to get details specific to employee
+    public void setEmployeeDetails() {
+        System.out.println("Enter your salary>> ");
+        setSalary(sc.nextInt());
+        System.out.println("Enter department>> ");
+        setDep(sc.next());
+        System.out.println("Enter designation>> ");
+        setDesig(sc.next());
+    }
+
+    // Method to display common details
+    public void displayCommonDetails() {
+        System.out.println("First Name: " + getFirstName());
+        System.out.println("Last Name: " + getLastName());
+        System.out.println("Age: " + getAge());
+        System.out.println("ID: " + getID());
+    }
+
+    // Method to display student-specific details
+    public void displayStudentDetails() {
+        System.out.println("Course: " + getCourse());
+    }
+
+    // Method to display employee-specific details
+    public void displayEmployeeDetails() {
+        System.out.println("Salary: " + getSalary());
+        System.out.println("Department: " + getDep());
+        System.out.println("Designation: " + getDesig());
+    }
+
+    public static void main(String[] args) {
+        DataCompilation obj = new DataCompilation();
+        obj.menu();
+    }
+}
+
+class StudentCompilation extends DataCompilation {
+    public StudentCompilation() {
+        setCommonDetails();
+        setStudentDetails();
+        displayCommonDetails();
+        displayStudentDetails();
+    }
+}
+
+class EmployeeCompilation extends DataCompilation {
+    public EmployeeCompilation() {
+        setCommonDetails();
+        setEmployeeDetails();
+        displayCommonDetails();
+        displayEmployeeDetails();
+    }
+}

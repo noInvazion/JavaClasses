@@ -1,0 +1,115 @@
+package JavaClass;
+
+import java.util.Scanner;
+
+
+
+public class DataCompilation {
+	
+	Scanner sc = new Scanner(System.in);
+	int age, id;
+	String firstName, lastName, course;
+
+
+	void menu() {
+		System.out.println("Take Student as Option 1 and Employee as Option 2.");
+		System.out.println("Are you inserting as a Student or Employee(Pick 1 or 2)>>");
+		int option = sc.nextInt();
+		
+		if (option == 1) {
+			StudentCompilation student = new StudentCompilation();
+		} else if (option ==  2) {
+			EmployeeCompilation employee = new EmployeeCompilation();
+		}
+		
+	}
+	
+	void StudentMethod() {
+		
+	}
+
+	void setAge(int age) {
+		this.age = age;
+	}
+	
+	void setID(int id) {
+		this.id = id;
+	}
+	
+	void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	void setCourse(String course) {
+		this.course = course;
+	}
+	
+	int getAge() {
+		return age;
+	}
+	
+	int getID() {
+		return id;
+	}
+	
+	String getFirstName() {
+		return firstName;
+	}
+	
+	String getLastName() {
+		return lastName;
+	}
+	
+	String getCourse() {
+		return course;
+	}
+	
+	public static void main(String[] args) {
+		DataCompilation obj = new DataCompilation();
+		obj.menu();
+	}
+}
+
+class StudentCompilation extends DataCompilation {
+	
+	public StudentCompilation() {
+		getFirstNames();
+		getLastNames();
+		getAges();
+		getCourses();
+		getIds();
+	}
+	void getFirstNames() {
+		System.out.println("Enter your first name, dimwit>>");
+		setFirstName(sc.nextLine());
+	}
+	
+	void getLastNames() {
+		System.out.println("Enter your last name, dimwit>>");
+		setLastName(sc.nextLine());
+	}
+	
+	void getAges() {
+		System.out.println("Enter your age>>");
+		setAge(sc.nextInt());
+	}
+	
+	void getIds() {
+		System.out.println("Enter your student ID>>");
+		setID(sc.nextInt());
+	}
+	
+	void getCourses() {
+		System.out.println("Enter your course>>");
+		setCourse(sc.nextLine());
+	}
+	
+}
+
+class EmployeeCompilation extends StudentCompilation{
+	
+}

@@ -1,0 +1,8 @@
+package JavaClass;
+
+public abstract class abstractClass {
+
+	abstract String playGame();
+	
+	abstract String exitGame();
+}

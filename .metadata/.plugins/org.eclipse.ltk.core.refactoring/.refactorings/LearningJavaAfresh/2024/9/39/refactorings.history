@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;yourGrade&apos; in &apos;GradingSystem.main(...)&apos; to &apos;cgpa&apos;&#x0D;&#x0A;- Original project: &apos;LearningJavaAfresh&apos;&#x0D;&#x0A;- Original element: &apos;GradingSystem.main(String[]).yourGrade&apos;&#x0D;&#x0A;- Renamed element: &apos;yourGrade&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;yourGrade&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Loops.java[GradingSystem~main~\[QString;@yourGrade!1364!1409!1378!1386!QGradingSystem;!0!false" name="cgpa" references="true" stamp="1727174637653" version="1.0"/>
+</session>

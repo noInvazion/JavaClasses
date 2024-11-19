@@ -1,0 +1,12 @@
+package JavaClass;
+
+public abstract class GameTemplate {
+
+	abstract String playGame();
+	
+	abstract String viewInstructions();
+	
+	void exitGame() {
+		System.out.printf("You have succesfully exited the game!\n Have a good life!");
+	}
+}
