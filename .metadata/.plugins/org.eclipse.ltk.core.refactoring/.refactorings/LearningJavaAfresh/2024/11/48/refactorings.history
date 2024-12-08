@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;exception.assertClass&apos; to &apos;CalculatorAssert&apos;&#x0D;&#x0A;- Original project: &apos;LearningJavaAfresh&apos;&#x0D;&#x0A;- Original element: &apos;exception.assertClass&apos;&#x0D;&#x0A;- Renamed element: &apos;exception.CalculatorAssert&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;assertClass&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;exception{assertClass.java[assertClass" matchStrategy="1" name="CalculatorAssert" qualified="false" references="true" similarDeclarations="false" stamp="1732789834627" textual="false" version="1.0"/>
+</session>

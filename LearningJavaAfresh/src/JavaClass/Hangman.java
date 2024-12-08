@@ -15,16 +15,19 @@ public class Hangman {
 
 	Hangman() {
 		System.out.println("\t\t\t\t\t\t\t\t Menu\t\t\n1.Play Hangman\n2.View Game Instructions\n3.Exit Hangman");
-		String result = menu();
-		if (result.equals(viewInstructions())) {
-			System.out.println("Viewing Instructions!");
-		} else if (result.equals(exitGame())) {
-			System.out.println("Hangman Game exited!");
-		}
 
+		while (true) {
+		try {
+			 menu();
+			 break;
+		} catch (InvalidOptionException e) {
+			System.out.println(e.getMessage());
+			continue;
+		} finally {}
+		}
 	}
 
-	String playGame() {
+	void playGame() {
 		System.out.println("Welcome to Guess The Country! Enter a letter to begin.");
 		String userGuess = "";
 
@@ -48,8 +51,6 @@ public class Hangman {
 				break;			
 			}
 		}
-		
-		return "default";
 
 	}
 
@@ -79,22 +80,35 @@ public class Hangman {
 		return "Hangman Game exited!";
 	}
 
-	String menu() {
+	void menu() throws InvalidOptionException{
 			System.out.print("Enter a valid option: "); //
 			int option = sc.nextInt();
 			switch (option) {
 			case 1:
-				return playGame(); // this and object name
+				playGame(); // this and object name
+				break;
 			case 2:
-				return viewInstructions();
+				System.out.println(viewInstructions());
+				break;
 			case 3:
-				return exitGame();
+				System.out.println(exitGame());
 			default:
-				return "Invalid option.";
+				throw new InvalidOptionException();
 		}
 	}
 
 	public static void main(String[] args) {
 		Hangman gameOfficial = new Hangman();
+	}
+}
+
+
+class InvalidOptionException extends Throwable {
+	public InvalidOptionException() {
+		super("Invalid Option passed.");
+	}
+	
+	public InvalidOptionException(String message) {
+		super(message);
 	}
 }

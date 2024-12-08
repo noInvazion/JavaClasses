@@ -5,4 +5,9 @@
     <fullyQualifiedTypeName name="JavaClass.EmployeeCompilation"/>
     <fullyQualifiedTypeName name="JavaClass.GetValues"/>
     <fullyQualifiedTypeName name="JavaClass.DataCompilation"/>
+    <fullyQualifiedTypeName name="JavaClass.InvalidOptionException"/>
+    <fullyQualifiedTypeName name="exception.GenderNotFound"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="exception.CalculatorAssert"/>
+    <fullyQualifiedTypeName name="JavaClass.ProblemStatement"/>
 </qualifiedTypeNameHistroy>

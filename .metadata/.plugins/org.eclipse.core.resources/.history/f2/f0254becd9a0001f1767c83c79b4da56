@@ -1,8 +1,0 @@
-package JavaClass;
-
-public abstract class GameTemplate {
-
-	abstract String playGame();
-	
-	abstract String exitGame();
-}

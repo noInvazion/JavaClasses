@@ -1,0 +1,184 @@
+package JavaClass;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+//  Write a Java program to calculate the average value of array elements
+
+public class ProblemStatement {
+	Scanner sc = new Scanner(System.in);
+
+	int[] numbers = { 5, 7, 3, 1, 10, 5};
+
+	int sumArray() {
+
+		int sum = 0;
+
+		for (int num : numbers) {
+			sum += num;
+		}
+
+		return sum;
+
+	}
+
+	void gridDashes() {
+		for (int i = 0; i <= 10; i++) {
+			for (int j = 0; j <= 10; j++) {
+				System.out.print("- ");
+			}
+			System.out.println();
+		}
+	}
+
+	int averageValue() {
+		int sumOfArrays = sumArray();
+		return sumOfArrays / 2;
+	}
+
+	void arrayCheck() {
+		System.out.print("Check Number>>");
+		int userNum = sc.nextInt();
+		boolean checkExists = false;
+		for (int i = 0; i < numbers.length; i++) {
+			if (userNum == numbers[i]) {
+				checkExists = true;
+				System.out.printf("The number %d exists.", userNum);
+				break;
+			} else {
+				checkExists = false;
+			}
+		}
+
+		if (checkExists == false) {
+			System.out.printf("The number %d does not exist.", userNum);
+		}
+	}
+
+	void indexArray() {
+		System.out.println(Arrays.toString(numbers));
+		System.out.print("Number(and get element)>>");
+		int userNum = sc.nextInt();
+		boolean checkExists = false;
+		for (int i = 0; i < numbers.length; i++) {
+			if (userNum == numbers[i]) {
+				checkExists = true;
+				System.out.printf("The number %d exists at index %d.", userNum, i);
+				break;
+			} else {
+				checkExists = false;
+			}
+		}
+
+		if (checkExists == false) {
+			System.out.printf("The number %d does not exist.", userNum);
+		}
+
+	}
+
+	void removeElement() {
+		// String array, remove by index or value
+		String[] letters = { "a", "b", "g", "e", "w", "b" };
+		System.out.println(Arrays.toString(letters));
+		System.out.print("Remove by index or value (1 or 2)>>");
+		int option = sc.nextInt();
+		switch (option) {
+		case 1:
+			System.out.print("Enter index>>");
+			int userIndex = sc.nextInt();
+			if (userIndex < letters.length) {
+				letters[userIndex] = "";
+			} else {
+				System.out.println("Invalid index.");
+			}
+			System.out.println(Arrays.toString(letters));
+			break;
+		case 2:
+			boolean checkValue = false;
+			System.out.print("Enter value>>");
+			String userValue = sc.next();
+			for (int i = 0; i < letters.length; i++) {
+				if (userValue.equals(letters[i])) {
+					checkValue = true;
+					letters[i] = "";
+				} else {
+					checkValue = false;
+				}
+			}
+
+			if (checkValue == false) {
+				System.out.println("Invalid Value!");
+			}
+			System.out.println(Arrays.toString(letters));
+			break;
+		}
+	}
+
+	void copyArray() {
+		int[] numbersClone = new int[numbers.length];
+		int i = 0;
+		for (int num : numbers) {
+			numbersClone[i] = num;
+			i++;
+		}
+
+		System.out.println("Numbers Array:" + Arrays.toString(numbers));
+		System.out.println("Numbers Array Clone: " + Arrays.toString(numbersClone));
+	}
+
+	void insertValue() {
+		System.out.println(Arrays.toString(numbers));
+		System.out.print("Enter a value>>");
+		int userValue = sc.nextInt();
+		System.out.print("Enter an index>>");
+		int userIndex = sc.nextInt();
+		if (userIndex <= numbers.length + 1) {
+			numbers[userIndex] = userValue;
+		} else {
+			System.out.println("Invalid index");
+		}
+		
+		System.out.println(Arrays.toString(numbers)); // doesn't actually inserts, just replaces...
+	}
+
+	void rangeArray() {
+		System.out.println(Arrays.toString(numbers));
+		boolean checkMax = false;
+		int max = numbers[0]; 
+		int min = numbers[0];
+		
+		for (int i = 0; i < numbers.length; i++) {
+			if (max < numbers[i]) {
+				max = numbers[i];
+			}
+			if (min > numbers[i]) {
+				min = numbers[i];
+			}
+		}
+		
+		System.out.println("Max Number>>" + max);
+		System.out.println("Min Number>>" + min);
+	}
+	
+	void reverseArray() {
+		
+	}
+	public static void main(String[] args) {
+		ProblemStatement pro = new ProblemStatement();
+//		System.out.println(Arrays.toString(pro.numbers));
+		int sumOfArray = pro.sumArray();
+		int averageArray = pro.averageValue();
+		System.out.printf("The sum of the array is %d\n", sumOfArray);
+		System.out.printf("The average sum of the array is %d\n", averageArray);
+		pro.gridDashes();
+		pro.arrayCheck();
+		pro.indexArray();
+		pro.removeElement();
+		pro.copyArray();
+		pro.insertValue();
+		pro.rangeArray();
+		pro.reverseArray();
+
+	}
+
+}
